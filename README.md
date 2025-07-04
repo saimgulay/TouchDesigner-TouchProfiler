@@ -134,6 +134,19 @@ Results are ranked by score and visualised via the `cookMetrics` DAT.
 
 ---
 
+## 🧠 What GPT Sees
+
+GPT receives the following:
+- A system prompt explaining its role as a TouchDesigner profiler
+- A full OP tree with inputs/outputs and key parameters
+- Live cook metrics for the most costly nodes
+- Your actual question as a user message
+
+The GPT assistant is primed with Derivative’s official optimisation guidelines — including "Optimized Python Expressions" and other key articles — to ensure that suggestions align with best practices in TouchDesigner.
+
+
+---
+
 ## 💬 Suggested Prompts
 
 - “Which feedback loops cost the most, and are they necessary?”
