@@ -73,18 +73,48 @@ TouchProfiler will:
 
 ### input
 ```
-What is the most expensive part of this patch and how can I reduce its impact without altering visual fidelity?
+Evaluate the performance of my project.
 ```
 
 ### GPT response (typical output)
 ```
-The largest contributor to cook time is /project1/noise2, with a high GPU load and resolution.
-Suggestions:
-1. Reduce its resolution or use mipmapping where appropriate.
-2. Consider replacing ramp1 with a lookup table if static.
-3. Group constant operators into a single multi-channel constant to reduce overhead.
-4. Re-evaluate feedback loops — feedback1 and feedback2 may compound cook times.
+Your project seems to be running reasonably well based on the provided metrics. However, there are some areas that could be optimized to improve performance further:
+
+1. **High Average Cook Times**:
+   - While the cook times are generally low, the `ramp1`, `ramp2`, and `noise2` operators have the highest cook times within your project. You could inspect the configurations of these operators:
+     - **Ramp Operators**: Review the resolution and antialias settings. If the resolution can be lower without impacting quality, adjust this.
+     - **Noise Operators**: Consider reducing complexity, especially on noise2, which shows a higher GPU cook time.
+
+2. **Redundant Channels**:
+   - The `constant1` and `constant2` operators yield similar outputs and may be redundantly feeding into multiple operators. Review and consolidate constants if possible to save on processing cycles.
+
+3. **Optimize Filters**:
+   - For nodes like `reorder1` and `noise1` consistently using linear and nearest filters, check if more efficient filtering or reduced complexity could suffice.
+
+4. **Feedback Loops**:
+   - Feedback operators can cause high cooking times if not optimized. Review the content being processed in `feedback1` and `feedback2` to identify if they can be simplified or if the cooking frequency can be reduced.
+
+5. **Memory Usage**:
+   - Your average memory usage seems low, which is good. Ensure there are no memory leaks particularly with feedback operators that can sometimes accumulate data in memory.
+
+6. **Eliminate Unneeded Operations**:
+   - Evaluate your operator graph to see if there are any unnecessary nodes or if certain operations can be merged together.
+
+Overall, while your project is functioning adequately, these adjustments can enhance performance further and contribute to smoother real-time interactions.
 ```
+
+---
+
+
+## 🧪 Example Project
+
+The repository includes an example `.toe` file (`example_project.toe`) showcasing how TouchProfiler can be integrated into a layered, real-time feedback network.
+
+You can preview the example patch in action here:  
+▶️ [Watch on YouTube](https://www.youtube.com/watch?v=WavVlg3PZnk)
+
+> _Conceptually inspired by the chaotic elegance of_ **Supermarket Sallad**.  
+> *TouchProfiler helps reveal where the visual noise becomes computational noise.*
 
 ---
 
