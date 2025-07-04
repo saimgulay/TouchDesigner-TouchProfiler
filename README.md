@@ -35,29 +35,17 @@ No UI panels. No black-box magic. Just data, structure, and informed guidance.
 
 ---
 
-## 📁 File Structure
 
-```
-TouchProfiler/
-├── ProfilerCollector.tox       → Graph traversal & OP introspection
-├── CookMetricsSampler.tox      → Multi-frame cook & memory metrics
-├── ChatCaller.tox              → LLM interface (OpenAI API)
-├── system_message              → GPT system prompt (performance analyst role)
-├── input                       → Your project-specific question
-├── output                      → GPT’s generated response
-```
-
----
 
 ## ⚙️ Setup Guide
 
-1. Place all `.tox` files into your `/project1` or other root container.
-2. In each component, set the `Target COMP` parameter to the container you want to analyse.
+1. Place the `.tox` file into your root container (outside `/project1`.
+2. In each component, check and set the `Target COMP` parameter to the container you want to analyse.
 3. In the `input` DAT, write your performance-related query.
    ```
    Example: Which nodes are performance bottlenecks and how should I optimise them?
    ```
-4. Paste your OpenAI API key into the `apikey` field in `ChatCaller.tox`.
+4. Paste your OpenAI API key into the `apikey` field in TouchProfiler.tox.
 5. Trigger the `Send` pulse.
 
 TouchProfiler will:
