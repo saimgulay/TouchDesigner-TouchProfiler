@@ -110,11 +110,11 @@ Overall, while your project is functioning adequately, these adjustments can enh
 
 The repository includes an example `.toe` file (`example_project.toe`) showcasing how TouchProfiler can be integrated into a layered, real-time feedback network.
 
-You can preview the example patch in action here:  
-▶️ [Watch on YouTube](https://www.youtube.com/watch?v=WavVlg3PZnk)
 
-> _Conceptually inspired by the chaotic elegance of_ **Supermarket Sallad**.  
+
+> _Test project was inspired by tutorial of _ . [**Supermarket Sallad**](https://www.youtube.com/watch?v=WavVlg3PZnk)
 > *TouchProfiler helps reveal where the visual noise becomes computational noise.*
+
 
 ---
 
