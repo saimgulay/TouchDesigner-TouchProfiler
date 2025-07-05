@@ -16,6 +16,11 @@ No UI panels. No black-box magic. Just data, structure, and informed guidance.
 
 ---
 
+![TouchProfiler Overview](images/TouchProfiler.png)
+
+---
+
+
 ## ✅ Key Features
 
 - 📊 **Live Metrics Sampling**  
@@ -36,6 +41,9 @@ No UI panels. No black-box magic. Just data, structure, and informed guidance.
 ---
 
 
+![Script DAT Workflow](images/ScriptDAT.png)
+
+---
 
 ## ⚙️ Setup Guide
 
